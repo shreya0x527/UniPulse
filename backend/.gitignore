@@ -1,0 +1,12 @@
+# Local database configuration
+src/main/resources/application-local.properties
+
+# Maven
+target/
+
+# IDE
+.vscode/
+.idea/
+
+# Environment files
+.env
