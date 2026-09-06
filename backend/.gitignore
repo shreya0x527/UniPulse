@@ -3,6 +3,7 @@ src/main/resources/application-local.properties
 
 # Maven
 target/
+application-local.properties
 
 # IDE
 .vscode/
