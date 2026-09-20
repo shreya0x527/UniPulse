@@ -26,6 +26,11 @@ public class OpportunityController {
         return opportunityService.getAllOpportunities();
     }
 
+    @GetMapping("/type/{type}")
+    public List<Opportunity> getOpportunitiesByType(@PathVariable String type) {
+        return opportunityService.getOpportunitiesByType(type);
+    }
+
     @GetMapping("/{id}")
     public Opportunity getOpportunityById(@PathVariable Long id) {
         return opportunityService.getOpportunityById(id);

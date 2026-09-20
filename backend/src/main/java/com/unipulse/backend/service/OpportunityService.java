@@ -23,6 +23,10 @@ public class OpportunityService {
         return opportunityRepository.findAll();
     }
 
+    public List<Opportunity> getOpportunitiesByType(String type) {
+        return opportunityRepository.findByType(type);
+    }
+
     public Opportunity getOpportunityById(Long id) {
         return opportunityRepository.findById(id).orElse(null);
     }
