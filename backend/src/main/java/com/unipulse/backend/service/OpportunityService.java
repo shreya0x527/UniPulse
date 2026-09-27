@@ -35,6 +35,23 @@ public class OpportunityService {
         return opportunityRepository.findById(id).orElse(null);
     }
 
+    public Opportunity updateOpportunity(Long id, Opportunity updatedOpportunity) {
+        Opportunity existingOpportunity = opportunityRepository.findById(id)
+                .orElse(null);
+
+        if (existingOpportunity == null) {
+            return null;
+        }
+
+        existingOpportunity.setTitle(updatedOpportunity.getTitle());
+        existingOpportunity.setType(updatedOpportunity.getType());
+        existingOpportunity.setDescription(updatedOpportunity.getDescription());
+        existingOpportunity.setLink(updatedOpportunity.getLink());
+        existingOpportunity.setDeadline(updatedOpportunity.getDeadline());
+
+        return opportunityRepository.save(existingOpportunity);
+    }
+
     public void deleteOpportunity(Long id) {
         opportunityRepository.deleteById(id);
     }

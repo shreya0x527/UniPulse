@@ -42,6 +42,13 @@ public class OpportunityController {
         return opportunityService.getOpportunityById(id);
     }
 
+    @PutMapping("/{id}")
+    public Opportunity updateOpportunity(
+            @PathVariable Long id,
+            @RequestBody Opportunity opportunity) {
+        return opportunityService.updateOpportunity(id, opportunity);
+    }
+
     @DeleteMapping("/{id}")
     public String deleteOpportunity(@PathVariable Long id) {
         opportunityService.deleteOpportunity(id);
