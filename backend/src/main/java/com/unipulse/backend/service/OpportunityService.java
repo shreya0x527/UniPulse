@@ -27,6 +27,10 @@ public class OpportunityService {
         return opportunityRepository.findByType(type);
     }
 
+    public List<Opportunity> searchOpportunitiesByTitle(String title) {
+        return opportunityRepository.findByTitleContainingIgnoreCase(title);
+    }
+
     public Opportunity getOpportunityById(Long id) {
         return opportunityRepository.findById(id).orElse(null);
     }

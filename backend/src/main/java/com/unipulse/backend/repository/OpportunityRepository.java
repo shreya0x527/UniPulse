@@ -8,4 +8,6 @@ import java.util.List;
 public interface OpportunityRepository extends JpaRepository<Opportunity, Long> {
 
     List<Opportunity> findByType(String type);
+
+    List<Opportunity> findByTitleContainingIgnoreCase(String title);
 }

@@ -31,6 +31,12 @@ public class OpportunityController {
         return opportunityService.getOpportunitiesByType(type);
     }
 
+    @GetMapping("/search")
+    public List<Opportunity> searchOpportunitiesByTitle(
+            @RequestParam String title) {
+        return opportunityService.searchOpportunitiesByTitle(title);
+    }
+
     @GetMapping("/{id}")
     public Opportunity getOpportunityById(@PathVariable Long id) {
         return opportunityService.getOpportunityById(id);
